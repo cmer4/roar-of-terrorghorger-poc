@@ -1,0 +1,152 @@
+.center-content {
+  position: absolute;
+  bottom: 0%;
+  left: 0%;
+  right: 0%;
+  z-index: 1000; /* Ensure it's on top of other content */
+  display: flex;
+  justify-content: center; /* Centers horizontally */
+  align-items: center;    /* Centers vertically */
+  height: 100vh;          /* Makes the div take full viewport height */
+  ion-item {
+    max-width: 350px; /* Optional: to control the width of the item */
+    width: 100%;
+  }
+}
+
+.suspectroom-chat {
+  position: relative;
+  overflow: auto;
+  height: 100%;
+  background-color: white;
+
+  .background-wrapper {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60%;
+    overflow: hidden;
+    z-index: 0;
+  }
+
+  .background-image {
+    position: absolute;
+    width: 100%;
+    height: 120%;
+    object-fit: contain;
+  }
+
+  .background-video {
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  ion-card-header,
+  ion-card-content {
+    position: relative;
+    z-index: 2;
+  }
+
+  .scrollable-content {
+    height: calc(100vh - 160px); /* Adjust the height to fit your layout */
+    overflow-y: auto;
+    padding: 10px;
+    background-color: white;
+  }
+
+  .chat-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .chat-bubble {
+    position: relative;
+    word-wrap: break-word;
+    max-width: 70%;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 10px;
+  }
+  
+  .align-left {
+    align-self: flex-start;
+    background-color:  #f2f2f2; /* Light color for participant */
+  }
+  
+  .align-right {
+    align-self: flex-end;
+    background-color: #e8f9e8; /* Different color for player */
+    color: rgb(18, 18, 18);
+  }
+
+  .sent {
+    align-self: flex-end;
+    background-color: #dcf8c6;
+    color: #000;
+  }
+
+  .received {
+    align-self: flex-start;
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #e5e5e5;
+  }
+
+  .chat-bubble p {
+    margin: 0;
+  }
+
+  .chat-bubble p:first-child {
+    font-weight: bold;
+  }
+
+  .timestamp {
+    font-size: 0.75em;
+    color: #666;
+    position: absolute;
+    bottom: -15px;
+    right: 10px;
+  }
+  
+}
+
+.qr-code-container {
+  position: absolute;
+  bottom: 10px;  /* Distance from the bottom of the screen */
+  right: 10px;   /* Distance from the right of the screen */
+  z-index: 1000; /* Ensure it's on top of other content */
+
+  ion-card {
+    width: 140px; /* Width of the card containing the QR code */
+    height: auto; /* Adjust height automatically */
+    background-color: white;
+  }
+}
+
+rect {
+  transition: width 3s, fill 3s;
+}
+
+.bounce-timer {
+  animation: bounce 0.3s ease-in-out;
+  color: var(--ion-color-danger); /* Change to any desired color */
+}
+
+@keyframes bounce {
+  0% {
+    transform: scale(1);
+    color: var(--ion-color-primary); /* Default color */
+  }
+  50% {
+    transform: scale(1.2);
+    color: var(--ion-color-danger); /* Color change at the peak of the bump */
+  }
+  100% {
+    transform: scale(1);
+    color: var(--ion-color-primary); /* Back to default */
+  }
+}

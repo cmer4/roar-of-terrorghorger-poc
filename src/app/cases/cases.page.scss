@@ -1,0 +1,81 @@
+ion-content {
+    --background: #f3f3f3;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 16px;
+  
+    .newspaper {
+      max-width: 1200px;
+      margin: 0 auto;
+      background-color: #fff;
+      padding: 20px;
+      border: 10px solid #ddd;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+  
+    .header-row {
+      border-bottom: 2px solid #000;
+      margin-bottom: 20px;
+      text-align: center;
+  
+      .header {
+        padding: 10px 0;
+  
+        .headline-title {
+          font-size: 3rem;
+          font-weight: bold;
+          margin: 0;
+        }
+  
+        .headline-subtitle {
+          font-size: 1.5rem;
+          font-style: italic;
+          margin: 0;
+        }
+      }
+    }
+  
+    .main-stories, .additional-stories {
+      margin-bottom: 20px;
+    }
+  
+    .story {
+      padding: 15px;
+      border-bottom: 1px solid #ddd;
+      border-left: 1px solid #ddd;
+  
+      .story-title {
+        font-size: 1.8rem;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+  
+      p {
+        font-size: 1.1rem;
+        line-height: 1.6;
+        margin-bottom: 10px;
+      }
+  
+      strong {
+        font-weight: bold;
+      }
+    }
+  
+    .main-story {
+      .story-title {
+        font-size: 2rem;
+      }
+    }
+  
+    .sidebar-story {
+      .story-title {
+        font-size: 1.6rem;
+      }
+    }
+  
+    .additional-story {
+      .story-title {
+        font-size: 1.6rem;
+      }
+    }
+  }
+  

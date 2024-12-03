@@ -1,0 +1,709 @@
+[
+  { 
+    phase: 'setup_1', 
+    type: 'scriptedNPC',
+    sender: 'judge',
+    content: "Time to get this party started! ...Who do we have here today ?", 
+    waitForUsers: true,
+    sideEffects: [
+      { type: 'playScriptedVideo', value: '../../assets/video/scripted_video_0.mp4' },
+      { type: 'displayQRCode', value: true }
+    ]
+  },
+  { 
+    phase: 'setup_2', 
+    type: 'scriptedNPC',
+    sender: 'judge',
+    content: "Please be seated. Who else do we miss ?", 
+    waitForUsers: true,
+    sideEffects: [
+      { type: 'playScriptedVideo', value: '../../assets/video/scripted_video_1.mp4' }
+    ]
+  },
+  { 
+    phase: 'setup_3', 
+    type: 'scriptedNPC',
+    sender: 'judge',
+    content: "Ok let's start...", 
+    waitForUsers: false,
+    sideEffects: [
+      { type: 'playScriptedVideo', value: '../../assets/video/scripted_video_2.mp4' },
+      { type: 'displayQRCode', value: false }
+    ]
+  },
+  { 
+    phase: 'setup_4', 
+    type: 'scriptedNPC',
+    sender: 'judge',
+    content: "Welcome to my courtroom, peoples. I'm gonna serve justice today, hot and spicy !", 
+    waitForUsers: false,
+    sideEffects: [
+      { type: 'playScriptedVideo', value: '../../assets/video/scripted_video_3.mp4' }
+    ]
+  },
+  { 
+    phase: 'setup_5',
+    type: 'scriptedNPC',
+    sender: 'judge',
+    content: "I'm Judge Megan, but if I don't hear you call me Your Honor, I might just toss you out of my courtroom .", 
+    waitForUsers: false,
+    sideEffects: [
+      { type: 'playScriptedVideo', value: '../../assets/video/scripted_video_4.mp4' }
+    ]
+  },
+  { 
+    phase: 'setup_6',
+    type: 'scriptedNPC',
+    sender: 'judge',
+    content: "To my left, I see the defense. And to my right, we have the prosecution .", 
+    waitForUsers: false,
+    sideEffects: [
+      { type: 'playScriptedVideo', value: '../../assets/video/scripted_video_5.mp4' }
+    ]
+  },
+  { 
+    phase: 'playerIntroductions_1',
+    type: 'scriptedNPC',
+    sender: 'judge',
+    content: "Alright, Player 1, step up and introduce yourself. I'd like to hear your name and your best achievement in the last year...You have one minute .", 
+    waitForUsers: false,
+    sideEffects: [
+      { type: 'playScriptedVideo', value: '../../assets/video/scripted_video_6.mp4' },
+      { type: 'setTimer', value: 60 },
+      { type: 'updatePlayerState', player: 'prosecutor', canSpeak: true, canObject: false },
+      { type: 'updatePlayerState', player: 'defender', canSpeak: false, canObject: false }
+    ]
+  },
+  { 
+    phase: 'playerIntroductions_2',
+    type: 'player',
+    sender: 'prosecutor',
+    content: "", 
+    waitForUsers: true
+  },
+  { 
+    phase: 'playerIntroductions_3',
+    type: 'aiNPC',
+    sender: 'judge',
+    content: "", 
+    waitForUsers: false,
+    aiPrompt: [
+      { 
+        role: "system",
+        content: `You are court drama show judge Megan Thee Stallion, a player acting as prosecutor just introduced themselves. You want to do a snarky comment doubting them and punish/praise them depending if they addressed you with your honor or not. Do not ask them to do anything such as to try again as the court process will proceed.`
+      }
+    ],
+    sideEffects: [
+      { type: 'createPrompt', value: 'playerIntro' },
+      { type: 'setTimer', value: 0 }
+    ]
+  },
+  { 
+    phase: 'playerIntroductions_4',
+    type: 'scriptedNPC',
+    sender: 'judge',
+    content: "Player 2, your turn. Name and what you're famous for .", 
+    waitForUsers: false,
+    sideEffects: [
+      { type: 'playScriptedVideo', value: '../../assets/video/scripted_video_7.mp4' },
+      { type: 'setTimer', value: 60 },
+      { type: 'updatePlayerState', player: 'prosecutor', canSpeak: false, canObject: false },
+      { type: 'updatePlayerState', player: 'defender', canSpeak: true, canObject: false }
+    ]
+  },
+  { 
+    phase: 'playerIntroductions_5',
+    type: 'player',
+    sender: 'defender',
+    content: "", 
+    waitForUsers: true
+  },
+  { 
+    phase: 'playerIntroductions_6',
+    type: 'aiNPC',
+    sender: 'judge',
+    content: "", 
+    waitForUsers: false,
+    aiPrompt: [
+      { 
+        role: "system",
+        content: `You are court drama show judge Megan Thee Stallion, a player acting as defense just introduced themselves. You want to do a snarky comment doubting them and punish/praise them depending if they addressed you with your honor or not. Do not ask them to do anything such as to try again as the court process will proceed.`
+      }
+    ],
+    sideEffects: [
+      { type: 'createPrompt', value: 'playerIntro' },
+      { type: 'setTimer', value: 0 }
+    ]
+  },
+  { 
+    phase: 'playerIntroductions_7',
+    type: 'scriptedNPC',
+    sender: 'judge',
+    content: "Honestly, now I'm a little skeptical of both of you, but let's see how this goes anyway .", 
+    waitForUsers: false,
+    sideEffects: [
+      { type: 'playScriptedVideo', value: '../../assets/video/scripted_video_8.mp4' },
+      { type: 'updatePlayerState', player: 'prosecutor', canSpeak: false, canObject: false },
+      { type: 'updatePlayerState', player: 'defender', canSpeak: false, canObject: false }
+    ]
+  },
+  { 
+    phase: 'playerIntroductions_8',
+    type: 'scriptedNPC',
+    sender: 'judge',
+    content: "Mr Tom, as the prosecutor, your mission is to prove to ME, Judge Megan, that the evidence and the charges are real . Let's see if you can get a conviction today .", 
+    waitForUsers: false,
+    sideEffects: [
+      { type: 'playScriptedVideo', value: '../../assets/video/scripted_video_9.mp4' }
+    ]
+  },
+  { 
+    phase: 'playerIntroductions_9',
+    type: 'scriptedNPC',
+    sender: 'judge',
+    content: "Mrs Jerry, as the defense, your job is to prove that this case is a bunch of BS, and get an acquittal .", 
+    waitForUsers: false,
+    sideEffects: [
+      { type: 'playScriptedVideo', value: '../../assets/video/scripted_video_10.mp4' }
+    ]
+  },
+  { 
+    phase: 'caseReveal_1',
+    type: 'scriptedNPC',
+    sender: 'judge',
+    content: "Alright, now let me give you a summary of today's case ...", 
+    waitForUsers: false,
+    sideEffects: [
+      { type: 'playScriptedVideo', value: '../../assets/video/scripted_video_11.mp4' }
+    ]
+  },
+  { 
+    phase: 'caseReveal_2',
+    type: 'scriptedNPC',
+    sender: 'judge',
+    content: "Today we sort out the DC vs Marvel situation . Prosecution represents DC, while Defense sides with Marvel suing each other over which universe offers better superheroes .", 
+    waitForUsers: false,
+    sideEffects: [
+      { type: 'playScriptedVideo', value: '../../assets/video/scripted_video_12.mp4' }
+    ]
+  },
+  { 
+    phase: 'caseReveal_3',
+    type: 'scriptedNPC',
+    sender: 'judge',
+    content: "DC fans boasted that their villains , have entire fan clubs, while Marvel's are just a bunch of misunderstood anti-heroes. Marvel's backers responded with claims their heroes saved Universe from Thanos, while DC can't handle even one Joker...Apparently there is more our witness overheard while on duty ...", 
+    waitForUsers: false,
+    sideEffects: [
+      { type: 'playScriptedVideo', value: '../../assets/video/scripted_video_13.mp4' }
+    ]
+  },
+  { 
+    phase: 'caseReveal_4',
+    type: 'scriptedNPC',
+    sender: 'judge',
+    content: "Speaking of which our witness name is Jake Bleck, I bet he can help you clear this mess up and get some evidence ...", 
+    waitForUsers: false,
+    sideEffects: [
+      { type: 'playScriptedVideo', value: '../../assets/video/scripted_video_14.mp4' }
+    ]
+  },
+  { 
+    phase: 'caseReveal_5',
+    type: 'scriptedNPC',
+    sender: 'judge',
+    content: "Each of you will have 60 seconds to make your opening statements and then ask 3 questions to our witness. Bring your A-game!", 
+    waitForUsers: false,
+    sideEffects: [
+      { type: 'playScriptedVideo', value: '../../assets/video/scripted_video_15.mp4' }
+    ]
+  },
+  { 
+    phase: 'openingStatements_1',
+    type: 'scriptedNPC',
+    sender: 'judge',
+    content: "Let's get this deliberation popping starting with ya'll opening statements.", 
+    waitForUsers: false,
+    sideEffects: [
+      { type: 'playScriptedAudio', value: '../../assets/audio/scripted_audio_16.mp3' }
+    ]
+  },
+  { 
+    phase: 'openingStatements_2',
+    type: 'scriptedNPC',
+    sender: 'judge',
+    content: "Prosecutor, you're up first. Let's hear it. You have one minute!", 
+    waitForUsers: false,
+    sideEffects: [
+      { type: 'playScriptedAudio', value: '../../assets/audio/scripted_audio_17.mp3' },
+      { type: 'setTimer', value: 60 },
+      { type: 'updatePlayerState', player: 'prosecutor', canSpeak: true, canObject: false },
+      { type: 'updatePlayerState', player: 'defender', canSpeak: false, canObject: true }
+    ]
+  },
+  { 
+    phase: 'openingStatements_3',
+    type: 'player',
+    sender: 'prosecutor',
+    content: "", 
+    waitForUsers: true
+  },
+  { 
+    phase: 'openingStatements_4',
+    type: 'aiNPC',
+    sender: 'judge',
+    content: "", 
+    waitForUsers: false,
+    aiPrompt: [
+      {
+        role: "system",
+        content: "You are court drama show judge Megan Thee Stallion, a player-prosecutor just did their opening statement. You want to comment in your style on what arguments you heard and if they did not provide anything substantial - comment that fact with strong words. Do not ask them to repeat themselves or try again as the court process will proceed. If they miss your honor in addressing you, superbriefly remind them of this."
+      }
+    ],
+    sideEffects: [
+      { type: 'createPrompt', value: 'openingStatement' },
+      { type: 'setTimer', value: 0 }
+    ]
+  },
+  { 
+    phase: 'openingStatements_5',
+    type: 'scriptedNPC',
+    sender: 'judge',
+    content: "Defender, now your turn. Make it count.", 
+    waitForUsers: false,
+    sideEffects: [
+      { type: 'playScriptedAudio', value: '../../assets/audio/scripted_audio_18.mp3' },
+      { type: 'setTimer', value: 60 },
+      { type: 'updatePlayerState', player: 'prosecutor', canSpeak: false, canObject: true },
+      { type: 'updatePlayerState', player: 'defender', canSpeak: true, canObject: false }
+    ]
+  },
+  { 
+    phase: 'openingStatements_6',
+    type: 'player',
+    sender: 'defender',
+    content: "", 
+    waitForUsers: true
+  },
+  { 
+    phase: 'openingStatements_7',
+    type: 'aiNPC',
+    sender: 'judge',
+    content: "", 
+    waitForUsers: false,
+    aiPrompt: [
+      {
+        role: "system",
+        content: "You are court drama show judge Megan Thee Stallion, a player-defender just did their opening statement. You want to comment in your style on what arguments you heard and if they did not provide anything substantial - comment that fact with strong words. Do not ask them to repeat themselves or try again as the court process will proceed. If they miss your honor in addressing you, superbriefly remind them of this."
+      }
+    ],
+    sideEffects: [
+      { type: 'createPrompt', value: 'openingStatement' },
+      { type: 'setTimer', value: 0 },
+      { type: 'updatePlayerState', player: 'prosecutor', canSpeak: false, canObject: false },
+      { type: 'updatePlayerState', player: 'defender', canSpeak: false, canObject: false }
+    ]
+  },
+  { 
+    phase: 'witnessQuestioning_1',
+    type: 'scriptedNPC',
+    sender: 'judge',
+    content: "That wraps up the opening statements. Time to bring in our witness.", 
+    waitForUsers: false,
+    sideEffects: [
+      { type: 'playScriptedAudio', value: '../../assets/audio/scripted_audio_19.mp3' }
+    ]
+  },
+  { 
+    phase: 'witnessQuestioning_2',
+    type: 'scriptedNPC',
+    sender: 'judge',
+    content: "Prosecutor, you go first, hit the witness with three questions. Start with your first one now!", 
+    waitForUsers: false,
+    sideEffects: [
+      { type: 'playScriptedAudio', value: '../../assets/audio/scripted_audio_20.mp3' }
+    ]
+  },
+  { 
+    phase: 'witnessQuestioning_3',
+    type: 'player',
+    sender: 'prosecutor',
+    content: "", 
+    waitForUsers: true,
+    sideEffects: [
+      { type: 'setTimer', value: 60 },
+      { type: 'changeBackground', value: '../../assets/images/witness.png' },
+      { type: 'updatePlayerState', player: 'prosecutor', canSpeak: true, canObject: false },
+      { type: 'updatePlayerState', player: 'defender', canSpeak: false, canObject: true }
+    ]
+  },
+  { 
+    phase: 'witnessQuestioning_4',
+    type: 'aiNPC',
+    sender: 'witness',
+    content: "", 
+    waitForUsers: false,
+    aiPrompt: [
+      {
+        role: "system",
+        content: "Your name is Jake Bleck, you are snarky, obsessed with comics book nerd. You are also a janitor at recent Comic-Con, where in lavatory you overheard a substantial DC vs Marvel argument with a lot of factual statements. Now you being questions by prosecution and defense at court drama show." 
+      }
+    ],
+    sideEffects: [
+      { type: 'createPrompt', value: 'witnessQuestioning' },
+      { type: 'setTimer', value: 0 }
+    ]
+  },
+  { 
+    phase: 'witnessQuestioning_5',
+    type: 'scriptedNPC',
+    sender: 'judge',
+    content: "Next question. Prosecutor... I hope we are getting somewhere...", 
+    waitForUsers: false,
+    sideEffects: [
+      { type: 'playScriptedAudio', value: '../../assets/audio/scripted_audio_21.mp3' }
+    ]
+  },
+  { 
+    phase: 'witnessQuestioning_6',
+    type: 'player',
+    sender: 'prosecutor',
+    content: "", 
+    waitForUsers: true,
+    sideEffects: [
+      { type: 'setTimer', value: 60 },
+      { type: 'updatePlayerState', player: 'prosecutor', canSpeak: true, canObject: false },
+      { type: 'updatePlayerState', player: 'defender', canSpeak: false, canObject: true }
+    ]
+  },
+  { 
+    phase: 'witnessQuestioning_7',
+    type: 'aiNPC',
+    sender: 'witness',
+    content: "", 
+    waitForUsers: false,
+    aiPrompt: [
+      {
+        role: "system",
+        content: "Your name is Jake Bleck, you are snarky, obsessed with comics book nerd. You are also a janitor at recent Comic-Con, where in lavatory you overheard a substantial DC vs Marvel argument with a lot of factual statements. Now you being questions by prosecution and defense at court drama show." 
+      }
+    ],
+    sideEffects: [
+      { type: 'createPrompt', value: 'witnessQuestioning' },
+      { type: 'setTimer', value: 0 }
+    ]
+  },
+  { 
+    phase: 'witnessQuestioning_8',
+    type: 'scriptedNPC',
+    sender: 'judge',
+    content: "Prosecutor, your third and final question. Now!", 
+    waitForUsers: false,
+    sideEffects: [
+      { type: 'playScriptedAudio', value: '../../assets/audio/scripted_audio_22.mp3' }
+    ]
+  },
+  { 
+    phase: 'witnessQuestioning_9',
+    type: 'player',
+    sender: 'prosecutor',
+    content: "", 
+    waitForUsers: true,
+    sideEffects: [
+      { type: 'setTimer', value: 60 },
+      { type: 'updatePlayerState', player: 'prosecutor', canSpeak: true, canObject: false },
+      { type: 'updatePlayerState', player: 'defender', canSpeak: false, canObject: true }
+    ]
+  },
+  { 
+    phase: 'witnessQuestioning_10',
+    type: 'aiNPC',
+    sender: 'witness',
+    content: "", 
+    waitForUsers: false,
+    aiPrompt: [
+      {
+        role: "system",
+        content: "Your name is Jake Bleck, you are snarky, obsessed with comics book nerd. You are also a janitor at recent Comic-Con, where in lavatory you overheard a substantial DC vs Marvel argument with a lot of factual statements. Now you being questions by prosecution and defense at court drama show." 
+      }
+    ],
+    sideEffects: [
+      { type: 'createPrompt', value: 'witnessQuestioning' },
+      { type: 'setTimer', value: 0 }
+    ]
+  },
+  { 
+    phase: 'witnessQuestioning_11',
+    type: 'scriptedNPC',
+    sender: 'judge',
+    content: "Ok thank you. Now, Defender, your turn, go ahead with your first question",
+    waitForUsers: false,
+    sideEffects: [
+      { type: 'playScriptedAudio', value: '../../assets/audio/scripted_audio_23.mp3' }
+    ]
+  },
+  { 
+    phase: 'witnessQuestioning_12',
+    type: 'player',
+    sender: 'defender',
+    content: "", 
+    waitForUsers: true,
+    sideEffects: [
+      { type: 'setTimer', value: 60 },
+      { type: 'updatePlayerState', player: 'prosecutor', canSpeak: false, canObject: true },
+      { type: 'updatePlayerState', player: 'defender', canSpeak: true, canObject: false }
+    ]
+  },
+  { 
+    phase: 'witnessQuestioning_13',
+    type: 'aiNPC',
+    sender: 'witness',
+    content: "", 
+    waitForUsers: false,
+    aiPrompt: [
+      {
+        role: "system",
+        content: "Your name is Jake Bleck, you are snarky, obsessed with comics book nerd. You are also a janitor at recent Comic-Con, where in lavatory you overheard a substantial DC vs Marvel argument with a lot of factual statements. Now you being questions by prosecution and defense at court drama show." 
+      }
+    ],
+    sideEffects: [
+      { type: 'createPrompt', value: 'witnessQuestioning' },
+      { type: 'setTimer', value: 0 }
+    ]
+  },
+  { 
+    phase: 'witnessQuestioning_14',
+    type: 'scriptedNPC',
+    sender: 'judge',
+    content: "Hmm... Defender, your next question now! and it better be relevant!", 
+    waitForUsers: false,
+    sideEffects: [
+      { type: 'playScriptedAudio', value: '../../assets/audio/scripted_audio_24.mp3' }
+    ]
+  },
+  { 
+    phase: 'witnessQuestioning_15',
+    type: 'player',
+    sender: 'defender',
+    content: "", 
+    waitForUsers: true,
+    sideEffects: [
+      { type: 'setTimer', value: 60 },
+      { type: 'updatePlayerState', player: 'prosecutor', canSpeak: false, canObject: true },
+      { type: 'updatePlayerState', player: 'defender', canSpeak: true, canObject: false }
+    ]
+  },
+  { 
+    phase: 'witnessQuestioning_16',
+    type: 'aiNPC',
+    sender: 'witness',
+    content: "", 
+    waitForUsers: false,
+    aiPrompt: [
+      {
+        role: "system",
+        content: "Your name is Jake Bleck, you are snarky, obsessed with comics book nerd. You are also a janitor at recent Comic-Con, where in lavatory you overheard a substantial DC vs Marvel argument with a lot of factual statements. Now you being questions by prosecution and defense at court drama show." 
+      }
+    ],
+    sideEffects: [
+      { type: 'createPrompt', value: 'witnessQuestioning' },
+      { type: 'setTimer', value: 0 }
+    ]
+  },
+  { 
+    phase: 'witnessQuestioning_17',
+    type: 'scriptedNPC',
+    sender: 'judge',
+    content: "Defender, your laaast question, make it goooood...",
+    waitForUsers: false,
+    sideEffects: [
+      { type: 'playScriptedAudio', value: '../../assets/audio/scripted_audio_25.mp3' }
+    ]
+  },
+  { 
+    phase: 'witnessQuestioning_18',
+    type: 'player',
+    sender: 'defender',
+    content: "", 
+    waitForUsers: true,
+    sideEffects: [
+      { type: 'setTimer', value: 60 },
+      { type: 'updatePlayerState', player: 'prosecutor', canSpeak: false, canObject: true },
+      { type: 'updatePlayerState', player: 'defender', canSpeak: true, canObject: false }
+    ]
+  },
+  { 
+    phase: 'witnessQuestioning_19',
+    type: 'aiNPC',
+    sender: 'witness',
+    content: "", 
+    waitForUsers: false,
+    aiPrompt: [
+      {
+        role: "system",
+        content: "Your name is Jake Bleck, you are snarky, obsessed with comics book nerd. You are also a janitor at recent Comic-Con, where in lavatory you overheard a substantial DC vs Marvel argument with a lot of factual statements. Now you being questions by prosecution and defense at court drama show." 
+      }
+    ],
+    sideEffects: [
+      { type: 'createPrompt', value: 'witnessQuestioning' },
+      { type: 'setTimer', value: 0 }
+    ]
+  },
+  { 
+    phase: 'closing Arguments_1',
+    type: 'scriptedNPC',
+    sender: 'judge',
+    content: "Alright. Enough of that...considering the evidence and the witness statements, you will have 60 seconds to prove your point.", 
+    waitForUsers: false,
+    sideEffects: [
+      { type: 'changeBackground', value: '../../assets/images/judge.png'}
+    ]
+  },
+  { 
+    phase: 'closingArguments_2',
+    type: 'scriptedNPC',
+    sender: 'judge',
+    content: "Prosecutor, let's hear your closing argument first.", 
+    waitForUsers: false,
+    sideEffects: [
+      { type: 'playScriptedAudio', value: '../../assets/audio/scripted_audio_26.mp3' },
+      { type: 'setTimer', value: 60 },
+      { type: 'updatePlayerState', player: 'prosecutor', canSpeak: true, canObject: false },
+      { type: 'updatePlayerState', player: 'defender', canSpeak: false, canObject: true }
+    ]
+  },
+  { 
+    phase: 'closingArguments_3',
+    type: 'player',
+    sender: 'prosecutor',
+    content: "", 
+    waitForUsers: true
+  },
+  { 
+    phase: 'closingArguments_4',
+    type: 'aiNPC',
+    sender: 'judge',
+    content: "", 
+    waitForUsers: false,
+    aiPrompt: [
+      {
+        role: "system",
+        content: "You are court drama show judge Megan Thee Stallion, a player presentng prosecution in DC vs Marvel case just did their closing arguments. You want to comment on their abilities to do their role, work with arguments, based on what they said, and if they did not provide anything substantial - comment that fact with strong words. Do not ask them to repeat themselves or try again as the court process will proceed. If they miss your honor in addressing you, superbriefly remind them of this."
+      }
+    ],
+    sideEffects: [
+      { type: 'createPrompt', value: 'closingArguments' },
+      { type: 'setTimer', value: 0 }
+    ]
+  },
+  { 
+    phase: 'closingArguments_5',
+    type: 'scriptedNPC',
+    sender: 'judge',
+    content: "Defender, give us your closing statement.", 
+    waitForUsers: false,
+    sideEffects: [
+      { type: 'playScriptedAudio', value: '../../assets/audio/scripted_audio_27.mp3' },
+      { type: 'setTimer', value: 60 },
+      { type: 'updatePlayerState', player: 'prosecutor', canSpeak: false, canObject: true },
+      { type: 'updatePlayerState', player: 'defender', canSpeak: true, canObject: false }
+    ]
+  },
+  { 
+    phase: 'closingArguments_6',
+    type: 'player',
+    sender: 'defender',
+    content: "", 
+    waitForUsers: true
+  },
+  { 
+    phase: 'closingArguments_7',
+    type: 'aiNPC',
+    sender: 'judge',
+    content: "", 
+    waitForUsers: false,
+    aiPrompt: [
+      {
+        role: "system",
+        content: "You are court drama show judge Megan Thee Stallion, a player presentng prosecution in DC vs Marvel case just did their closing arguments. You want to comment on their abilities to do their role, work with arguments, based on what they said, and if they did not provide anything substantial - comment that fact with strong words. Do not ask them to repeat themselves or try again as the court process will proceed. If they miss your honor in addressing you, superbriefly remind them of this."
+      }
+    ],
+    sideEffects: [
+      { type: 'createPrompt', value: 'closingArguments' },
+      { type: 'setTimer', value: 0 },
+      { type: 'updatePlayerState', player: 'prosecutor', canSpeak: false, canObject: false },
+      { type: 'updatePlayerState', player: 'defender', canSpeak: false, canObject: false }
+    ]
+  },
+  { 
+    phase: 'deliberation_1',
+    type: 'scriptedNPC',
+    sender: 'judge',
+    content: "That wraps up the closing arguments. Let's move on to deliberation.", 
+    waitForUsers: false,
+    sideEffects: [
+      { type: 'playScriptedAudio', value: '../../assets/audio/scripted_audio_28.mp3' }
+    ]
+  },
+  { 
+    phase: 'deliberation_2',
+    type: 'scriptedNPC',
+    sender: 'judge',
+    content: "I'm going to consider all the arguments and evidence presented.", 
+    waitForUsers: false,
+    sideEffects: [
+      { type: 'playScriptedAudio', value: '../../assets/audio/scripted_audio_29.mp3' }
+    ]
+  },
+  { 
+    phase: 'deliberation_3',
+    type: 'aiNPC',
+    sender: 'judge',
+    content: "", 
+    waitForUsers: false,
+    aiPrompt: [
+      {
+        role: "system",
+        content: "You are court drama show judge Megan Thee Stallion, you went through entire trial and heard bunch of inputs from prosecution and defense on the case of DC vs Marvel debate, You are about to sum up both sides arguments and share your deliveration out loud."
+      }
+    ],
+    sideEffects: [
+      { type: 'createPrompt', value: 'deliberation' }
+    ]
+  },
+  { 
+    phase: 'verdict_1',
+    type: 'scriptedNPC',
+    sender: 'judge',
+    content: "After careful consideration, here's the verdict", 
+    waitForUsers: false,
+    sideEffects: [
+      { type: 'playScriptedAudio', value: '../../assets/audio/scripted_audio_30.mp3' }
+    ]
+  },
+  { 
+    phase: 'verdict_2',
+    type: 'aiNPC',
+    sender: 'judge',
+    content: "", 
+    waitForUsers: false,
+    aiPrompt: [
+      {
+        role: "system",
+        content: "You are court drama show judge Megan Thee Stallion, you went through your deliveration and now will deliver a verdict saying the final word in which heroes are better DC or Marvel debate or was it a lawsuit."
+      }
+    ],
+    sideEffects: [
+      { type: 'createPrompt', value: 'verdict' }
+    ]
+  },
+  { 
+    phase: 'verdict_3',
+    type: 'scriptedNPC',
+    sender: 'judge',
+    content: "Thank y'all for participating in this session. You brought... your best!", 
+    waitForUsers: false,
+    sideEffects: [
+      { type: 'playScriptedAudio', value: '../../assets/audio/scripted_audio_31.mp3' }
+    ]
+  }
+];

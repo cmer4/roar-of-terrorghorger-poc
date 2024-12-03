@@ -1,0 +1,78 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Cases</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid class="newspaper">
+    <!-- Header Section -->
+    <ion-row class="header-row">
+      <ion-col size="12">
+        <div class="header">
+          <h1 class="headline-title">The Courtroom Chronicle</h1>
+          <p class="headline-subtitle">Daily Debates & Legal Drama</p>
+        </div>
+      </ion-col>
+    </ion-row>
+
+    <!-- Main Stories Section -->
+    <ion-row class="main-stories">
+      <ion-col size="12" size-md="8" class="main-story">
+        <ion-card (click)="selectStory()" class="story">
+          <h2 class="story-title">The State vs. GIF Pronunciation</h2>
+          <img style="max-height: 215px" src="../../assets/images/gif-case.png"/>
+          <h2 class="story-title"></h2>
+          <p>The controversy over the correct pronunciation of the popular image format GIF has escalated into a full-blown court case after a heated argument at a tech conference. Dr. Samuel Lang argues for the soft 'G' pronunciation, citing historical usage and the creator's intent. Steve Wilhite, the creator of the GIF format, testified, "I prefer the soft 'G' pronunciation."</p>
+          <p>On the other hand, Emily Rogers defends the hard 'G' pronunciation, arguing that common usage in the tech community supports it. "Many in the tech world pronounce it with a hard 'G'," explained Tom Scott, a well-known YouTuber and tech educator, supporting Rogers' claim.</p>
+        </ion-card>
+      </ion-col>
+
+      <ion-col size="12" size-md="4" class="sidebar-story">
+        <ion-card class="story">
+          <h2 class="story-title">Cats vs Dogs: The Ultimate Pet Showdown</h2>
+          <p>After a neighborhood dispute turned into a brawl at the local pet park, the debate over whether cats or dogs make better pets has landed in court. Karen Smith presented evidence of cats' independence, cleanliness, and low maintenance. "Cats are self-sufficient and require less attention," said Dr. Jessica Brown, a veterinarian.</p>
+          <p>Mark Johnson argues that dogs offer unmatched loyalty, companionship, and security. "Dogs are man's best friend for a reason," stated Officer Mike Taylor, sharing stories of police dogs saving lives and emphasizing their utility and loyalty.</p>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+    <!-- Additional Stories Section -->
+    <ion-row class="additional-stories">
+      <ion-col size="12" size-md="6" class="additional-story">
+        <ion-card class="story">
+          <h2 class="story-title">The People vs. Pineapple Pizza</h2>
+          <p>A culinary feud has erupted after a renowned Italian chef was insulted by the addition of pineapple to his traditional pizza at a prestigious food festival. Chef Giovanni Rossi argues that pineapple on pizza is a culinary abomination that disrespects Italian heritage. "It's a violation of tradition," exclaimed Maria DiMarco, a food historian.</p>
+          <p>Chef Lani Kalua defends the combination as a creative and beloved dish, highlighting the balance of sweet and savory. "Pineapple brings a unique flavor that many people love," argued John Smith, a food critic, providing a neutral perspective on modern culinary innovations.</p>
+        </ion-card>
+      </ion-col>
+
+      <ion-col size="12" size-md="6" class="additional-story">
+        <ion-card class="story">
+          <h2 class="story-title">Marvel Fans vs. DC Enthusiasts</h2>
+          <p>A comic book convention panel discussion spiraled out of control, leading to a lawsuit over which universe offers better superheroes. Alex Parker argues that Marvel's characters are more relatable and their cinematic universe is superior. "Marvel's impact on popular culture is undeniable," said Stan Lee in archival interviews presented as evidence.</p>
+          <p>Jamie Wayne defends DC's legacy, emphasizing the iconic status of characters like Batman and Superman. "DC's artistic and thematic depth in films is unmatched," testified Zack Snyder.</p>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="additional-stories">
+      <ion-col size="12" size-md="6" class="additional-story">
+        <ion-card class="story">
+          <h2 class="story-title">The People vs. Microwave Tea</h2>
+          <p>The trial began after a horrified tea connoisseur, Emily Green, witnessed her neighbor, John Doe, warming up tea in a microwave at a neighborhood potluck. Emily argues that microwaving tea destroys its delicate flavors and is an affront to tea culture. "Proper tea brewing requires patience and care," testified Mr. Chen, a traditional tea master.</p>
+          <p>John defends his method as convenient and argues that it doesn't significantly alter the taste for everyday tea drinkers. "Microwaving tea is practical for modern lifestyles," stated Dr. Sarah White, a food scientist, providing a neutral analysis of the effects of microwaving tea.</p>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+
+
+
+
+

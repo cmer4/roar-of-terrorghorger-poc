@@ -1,0 +1,79 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Debug</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <!-- Segment Control -->
+    <ion-segment (ionChange)="segmentChanged($event)" value="game-settings">
+      <ion-segment-button value="game-settings">
+        <ion-label>Game Settings</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="api-settings" disabled>
+        <ion-label>API Settings</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="case-settings" disabled>
+        <ion-label>Case Settings</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="judge-settings" disabled>
+        <ion-label>Judge Settings</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="sandbox" disabled>
+        <ion-label>Sandbox</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+
+    <!-- Game Settings Section -->
+    <div [hidden]="selectedSegment !== 'game-settings'">
+      <ion-row>
+        <ion-col size="12">
+          <h2>Game Settings</h2>
+        </ion-col>
+        <ion-item style="width:100%">
+          <ion-toggle [(ngModel)]="gamestate.voiceMode">Voice-mode:</ion-toggle>
+        </ion-item>
+      </ion-row>
+    </div>
+
+    <!-- API Settings Section -->
+    <div [hidden]="selectedSegment !== 'api-settings'">
+      <ion-row>
+        <ion-col size="12">
+          <h2>API Settings</h2>
+        </ion-col>
+      </ion-row>
+    </div>
+
+    <!-- Case Settings Section -->
+    <div [hidden]="selectedSegment !== 'case-settings'">
+      <ion-row>
+        <ion-col size="12">
+          <h2>Case Settings</h2>
+        </ion-col>
+      </ion-row>
+    </div>
+
+    <!-- Judge Settings Section -->
+    <div [hidden]="selectedSegment !== 'judge-settings'">
+      <ion-row>
+        <ion-col size="12">
+          <h2>Judge Settings</h2>
+        </ion-col>
+      </ion-row>
+    </div>
+
+    <!-- Sandbox Section -->
+    <div [hidden]="selectedSegment !== 'sandbox'">
+      <ion-row>
+        <ion-col size="12">
+          <h2>Sandbox</h2>
+        </ion-col>
+      </ion-row>
+    </div>
+  </ion-grid>
+</ion-content>

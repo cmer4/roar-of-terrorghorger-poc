@@ -1,0 +1,88 @@
+{
+    "cases": [
+      {
+        "id": 1,
+        "title": "The State vs. GIF Pronunciation",
+        "summary": "The controversy over the correct pronunciation of the popular image format GIF has escalated into a full-blown court case after a heated argument at a tech conference.",
+        "details": "Dr. Samuel Lang insists that GIF should be pronounced with a soft 'G', likening it to the sound of 'Jif', while Emily Rogers contends that it should have a hard 'G', like 'Gift'.",
+        "evidence": [
+          "Historical usage of the soft 'G'",
+          "Common usage in the tech community for the hard 'G'"
+        ],
+        "witness": 
+        {
+          "name": "Steve Wilhite",
+          "role": "Creator of the GIF format",
+          "testimony": "I created it, and it's pronounced 'Jif'."
+        }
+      },
+      {
+        "id": 2,
+        "title": "Cats vs Dogs: The Ultimate Pet Showdown",
+        "summary": "A neighborhood dispute over whether cats or dogs are better pets turned into a brawl at the local pet park, landing the matter in court.",
+        "details": "Karen Smith argues that cats are independent and low-maintenance, while Mark Johnson claims dogs offer unmatched loyalty and companionship.",
+        "evidence": [
+          "Cats are self-sufficient and require less attention",
+          "Dogs provide loyalty, companionship, and security"
+        ],
+        "witness":
+        {
+          "name": "Dr. Jessica Brown",
+          "role": "Veterinarian",
+          "testimony": "Cats are self-sufficient and require less attention."
+        }
+      },
+      {
+        "id": 3,
+        "title": "The People vs. Pineapple Pizza",
+        "summary": "A culinary feud has erupted after a renowned Italian chef was insulted by the addition of pineapple to his traditional pizza at a prestigious food festival.",
+        "details": "Chef Giovanni Rossi declares that pineapple on pizza is an abomination, while Chef Lani Kalua defends it as a delightful combination of sweet and savory.",
+        "evidence": [
+          "Pineapple on pizza disrespects Italian heritage",
+          "Pineapple adds a unique flavor that many people love"
+        ],
+        "witness":
+        {
+          "name": "John Smith",
+          "role": "Food Critic",
+          "testimony": "Pineapple brings a unique flavor that many people love. "
+        }
+      },
+      {
+        "id": 4,
+        "title": "DC fans vs Marvel enthusiasts",
+        "summary": "Recent Comic-Con panel spiraled out of control, leading to a lawsuit over which universe offers better superheroes.",
+        "details": "DC fans boasted that their villians, have entire fan clubs, while Marvel's are just a bunch of misunderstood anti-heroes. Marvel's backers responded with claims their heros saved Universe from Thanos, while DC can't handle even one Joker...Aparently there is more our witness overheard while on duty",
+        "evidence": [
+          "Joker is still alive, thriving, gets a new film every year",
+          "Marvel heroes have day jobs! DC's heroes are part-time billionaires or aliens.",
+          "Latest Joker movie had 89% audience votes",
+          "Marvel's avengers united several times, DC is still trying to figure out how to assemble a team",
+          "DC's heroes feel dark and brooding, while Marvel's are like a high school reunion."
+        ],
+        "witness":
+        {
+          "name": "Jake Bleck" ,
+          "role": "A Comic-Con's Convention Center Janitor",
+          "testimony": "Witnessed hot debate between DC and Marvel die hard fans in the lavatory, with a lot of beans spilled by both sides"
+        }
+      },
+      {
+        "id": 5,
+        "title": "The People vs. Microwave Tea",
+        "summary": "The trial began after a horrified tea connoisseur, Emily Green, witnessed her neighbor, John Doe, warming up tea in a microwave at a neighborhood potluck.",
+        "details": "Emily argues that microwaving tea destroys its delicate flavors, while John defends his method as convenient and practical for modern lifestyles.",
+        "evidence": [
+          "Microwaving tea destroys its delicate flavors",
+          "Microwaving tea is practical for modern lifestyles"
+        ],
+        "witness":
+        {
+          "name": "Mr. Chen",
+          "role": "Traditional Tea Master",
+          "testimony": "Proper tea brewing requires patience and care."
+        }
+      }
+    ]
+  }
+  

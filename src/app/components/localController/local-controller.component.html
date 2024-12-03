@@ -1,0 +1,30 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-button color="medium" (click)="cancel()">Dismiss</ion-button>
+      </ion-buttons>
+      <ion-title>Local Controller</ion-title>
+      <!-- <ion-buttons slot="end">
+        <ion-button (click)="confirm()" [strong]="true">Confirm</ion-button>
+      </ion-buttons> -->
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">
+    <div>
+      <ion-item>
+        <ion-textarea [(ngModel)]="input" placeholder="Type here" (keydown)="handleKeydown($event)"></ion-textarea>
+      </ion-item>
+      <ion-button expand="block" (click)="speak()">
+        <ion-icon slot="start" name="chatbox-outline"></ion-icon>
+        Speak!
+      </ion-button>
+      <ion-button expand="block" (click)="handleRecording()" [color]="recordingSpeech? 'danger':'warning'">
+        <ion-icon slot="start" name="mic-outline"></ion-icon>
+        Record!
+      </ion-button>
+      <ion-button expand="block" (click)="object()" [disabled]="true">
+        <ion-icon slot="start" name="thumbs-down"></ion-icon>
+        Objection!
+      </ion-button>
+    </div>
+  </ion-content>

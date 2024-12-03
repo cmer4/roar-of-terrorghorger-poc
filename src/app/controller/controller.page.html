@@ -1,0 +1,47 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Controller</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content scroll-y="false">
+  <ion-card *ngIf="!microphonePermissionGranted">
+    <ion-card-header>
+      You will speak using the microphone, please allow it in your browser!
+    </ion-card-header>
+  </ion-card>
+  <ion-card *ngIf="!currentPlayerNumber">
+    <ion-card-header>
+      Game session has not started or a full session is in progress
+    </ion-card-header>
+  </ion-card>
+  <ion-card class="player-card" *ngIf="currentPlayerNumber">
+    <ion-card-header>
+      <ion-card-title>
+        {{ (playerName? playerName+' | ': '') + playerRole }}
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <div>
+        <ion-item>
+          <ion-textarea [disabled]="!canSpeak" [(ngModel)]="playerInput" placeholder="Type here"></ion-textarea>
+        </ion-item>
+        <ion-button expand="block" (click)="speak()" [disabled]="!canSpeak">
+          <ion-icon slot="start" name="chatbox-outline"></ion-icon>
+          Speak!
+        </ion-button>
+        <ion-button expand="block" (pointerdown)="startSpeechRecording()" (pointerup)="stopSpeechRecording()" [disabled]="!canSpeak" [color]="recordingSpeech? 'danger':'warning'">
+          <ion-icon slot="start" name="mic-outline"></ion-icon>
+          Record!
+        </ion-button>
+        <ion-button expand="block" (click)="object()" [disabled]="!canObject">
+          <ion-icon slot="start" name="thumbs-down"></ion-icon>
+          Objection!
+        </ion-button>
+      </div>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
